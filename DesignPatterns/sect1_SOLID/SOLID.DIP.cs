@@ -5,10 +5,15 @@ using static System.Console;
 
 namespace DotNetDesignPatternDemos.SOLID.DependencyInversionPrinciple
 {
-  // hl modules should not depend on low-level; both should depend on abstractions
-  // abstractions should not depend on details; details should depend on abstractions
+    /*
+     * https://www.youtube.com/watch?v=8M7pLjacCPI
+     * The basic idea is in the high level implementation... instead of passing the low-level class, 
+     * pass an interface of the low level class instead to remove this dependency on the class.
+     */
+    // high level modules should not depend on low-level; both should depend on abstractions
+    // abstractions should not depend on details; details should depend on abstractions
 
-  public enum Relationship
+    public enum Relationship
   {
     Parent,
     Child,

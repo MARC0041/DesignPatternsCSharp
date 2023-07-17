@@ -2,8 +2,20 @@
 
 namespace DotNetDesignPatternDemos.SOLID.LiskovSubstitutionPrinciple
 {
-  // using a classic example
-  public class Rectangle
+    /*
+     * LSP is where 
+     * 
+     * Example:
+     * Rectangle sq = new Square(); produces weird results
+     * even though a square is ALSO a rectangle. 
+     * 
+     * The fix here is to change Rectangle to be virtual to allow for override
+     * Also use override in the square
+     */
+
+    
+    // using a classic example
+    public class Rectangle
   {
     //public int Width { get; set; }
     //public int Height { get; set; }
@@ -30,16 +42,23 @@ namespace DotNetDesignPatternDemos.SOLID.LiskovSubstitutionPrinciple
 
   public class Square : Rectangle
   {
-    //public new int Width
-    //{
-    //  set { base.Width = base.Height = value; }
-    //}
+        //public new int Width
+        //{
+        //  set { base.Width = base.Height = value; }
+        //}
 
-    //public new int Height
-    //{ 
-    //  set { base.Width = base.Height = value; }
-    //}
+        //public new int Height
+        //{ 
+        //  set { base.Width = base.Height = value; }
+        //}
+    public Square(int length)
+    {
+            Width = length;
+    }
+    public Square()
+    {
 
+    }
     public override int Width // nasty side effects
     {
       set { base.Width = base.Height = value; }
@@ -61,8 +80,8 @@ namespace DotNetDesignPatternDemos.SOLID.LiskovSubstitutionPrinciple
       WriteLine($"{rc} has area {Area(rc)}");
 
       // should be able to substitute a base type for a subtype
-      /*Square*/ Rectangle sq = new Square();
-      sq.Width = 4;
+      /*Square*/ Rectangle sq = new Square(3);
+      //sq.Width = 4;
       WriteLine($"{sq} has area {Area(sq)}");
     }
   }

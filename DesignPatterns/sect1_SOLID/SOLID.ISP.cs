@@ -2,6 +2,27 @@
 
 namespace DotNetDesignPatternDemos.SOLID.InterfaceSegregationPrinciple
 {
+    /*
+     * Make sure unnecessary functionalities can be segregated! 
+     * 1. Split it up into multiple interfaces: interface1, interface2
+     * 2. Can combine if you want. combined_interface: interface1, interface2
+     * 3. Implement the class. CombineClass : combined_interface
+     *      contructor will need to take in multiple interfaces 
+     *      CombineClass(interface1, interface2)...
+     * 4. Use decorator pattern to call
+     *     public void Print(Document d)
+            {
+              printer.Print(d);
+            }
+     * */
+
+    public class Demo
+    {
+        public static void Main_(string[] args)
+        {
+            // Nothing to call
+        }
+    }
   public class Document
   {
   }
